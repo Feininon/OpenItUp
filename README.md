@@ -27,7 +27,7 @@ This project is built with a focus on simplicity and local-first AI, using open-
   * **AI Model:** Any Ollama-compatible model(gpt-oss:20b). The connection is made via simple HTTP requests.
   * **Frontend:** Standard **HTML5**, **CSS3**, and minimal vanilla **JavaScript**.
   * **Templating:** **Jinja2** (comes with Flask).
-  * **Diagrams:** **Mermaid.js** for rendering flowcharts in the Code Visualizer.
+  * **Diagrams:** **Mermaid.js** for rendering flowcharts in the Code Visualizer. #figyring out this
 
 -----
 
@@ -37,7 +37,7 @@ Follow these instructions to get the Code Creativity Suite running on your local
 
 ### Prerequisites
 
-1.  **Python 3.8+**: Make sure you have a modern version of Python installed.
+1.  **Python 3.9+**: Make sure you have a modern version of Python installed.
 2.  **Ollama**: You must have [Ollama](https://ollama.com/) installed and running.
 3.  **An LLM Model**: Pull a model to use with the application. We recommend a versatile model gpt-oss:20b.
     ```bash
@@ -102,15 +102,63 @@ The project is organized in a standard Flask application structure:
 
 ```
 code-creativity-suite/
-├── app.py              # The main Flask application with all routes and logic.
-├── templates/            # Contains all the HTML files for each tool.
-│   ├── layout.html     # The base template with the navigation bar.
-│   └── ...             # HTML files for each feature.
+├── app.py
 ├── static/
-│   └── style.css       # The single stylesheet for the entire application.
-└── README.md           # This file.
+│   └── style.css
+└── templates/
+    ├── api_mockup.html
+    ├── art_generator.html
+    ├── code_visualizer.html
+    ├── commit_poet.html
+    ├── doc_writer.html
+    ├── error_sleuth.html
+    ├── index.html
+    ├── joke_generator.html
+    ├── layout.html
+    ├── mental_health.html
+    ├── regex_wizard.html
+    └── storycode.html
 ```
+
+## Endpoints Explaination
+
+Clear breakdown of what each endpoint in your `app.py` file does.
+
+* `@app.route('/')`
+    This is the **homepage**. It simply renders the `index.html` template, which serves as the welcome page for your application.
+
+* `@app.route('/storycode')`
+    This is the **StoryCode** tool. It takes a snippet of Python code, analyzes its structure (functions, loops, etc.), and sends that analysis to the AI to generate a short, narrative story.
+
+* `@app.route('/mental-health')`
+    This is the **Coder's Companion**. It takes a user's description of a stressful issue and uses the AI to generate a supportive, empathetic response with a piece of actionable advice.
+
+* `@app.route('/art-generator')`
+    This is the **Art Generator**. It takes a programming theme from the user and prompts the AI to create a unique piece of abstract art by generating SVG image code.
+
+* `@app.route('/joke-generator')`
+    This is the **Joke Generator**. It takes a description of a code bug or concept and asks the AI to return a JSON object containing a joke and an explanation of the underlying technical concept.
+
+* `@app.route('/commit-poet')`
+    This is the **Commit Message Poet**. It takes two code snippets ("before" and "after") and a style preference, then prompts the AI to write a well-formatted Git commit message that describes the change.
+
+* `@app.route('/regex-wizard')`
+    This is the **Regex Wizard**. It's a dual-function endpoint that can either generate a regular expression from a plain English description or explain a given regex pattern in simple terms.
+
+* `@app.route('/error-sleuth')`
+    This is the **Error Sleuth**. It takes a full error message or stack trace and uses the AI to provide a simple explanation, a list of likely causes, and suggested steps for debugging.
+
+* `@app.route('/api-mockup')`
+    This is the **API Mockup Generator**. It takes a user's description of a data model and prompts the AI to generate a sample JSON array, which is useful for frontend development.
+
+* `@app.route('/doc-writer')`
+    This is the **DocString Writer**. It takes a Python function and a style choice (e.g., Google) and has the AI automatically write and insert a professional docstring.
+
+* `@app.route('/code-visualizer')`
+    This is the **Code Visualizer**. It takes a Python function, sends it to the AI to be analyzed, and receives back Mermaid.js syntax to render a flowchart of the code's logic.
+
+-----
 
 ## CONTRIBUTING
 
-This is our project the 
+This is our project.
