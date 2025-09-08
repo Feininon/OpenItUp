@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>🧙‍♂️ The Regex Wizard</h1>
+    <p>Your one-stop tool for creating and understanding Regular Expressions.</p>
+    
+    <div class="side-by-side">
+        <div class="form-section">
+            <h3>Generate Regex from Text</h3>
+            <form method="post">
+                <input type="text" name="description" placeholder="e.g., a valid email address" value="{{ description if form_submitted == 'generate' else '' }}">
+                <button type="submit" name="generate_regex">Generate</button>
+            </form>
+        </div>
+        <div class="form-section">
+            <h3>Explain Regex Pattern</h3>
+            <form method="post">
+                <input type="text" name="regex_pattern" placeholder="e.g., ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" value="{{ regex_pattern if form_submitted == 'explain' else '' }}">
+                <button type="submit" name="explain_regex">Explain</button>
+            </form>
+        </div>
+    </div>
+
+    {% if result %}
+    <div class="result-box">
+        <h3>Wizard's Answer:</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

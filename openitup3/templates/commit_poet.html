@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>✍️ The Commit Message Poet</h1>
+    <p>Paste your code before and after your changes to generate a commit message.</p>
+    <form method="post">
+        <div class="side-by-side">
+            <div class="editor-pane">
+                <h3>Code Before</h3>
+                <textarea name="code_before" rows="12">{{ code_before }}</textarea>
+            </div>
+            <div class="editor-pane">
+                <h3>Code After</h3>
+                <textarea name="code_after" rows="12">{{ code_after }}</textarea>
+            </div>
+        </div>
+        <div class="options">
+            <label for="style">Commit Style:</label>
+            <select name="style" id="style">
+                <option value="Conventional" {% if style == 'Conventional' %}selected{% endif %}>Conventional</option>
+                <option value="Humorous" {% if style == 'Humorous' %}selected{% endif %}>Humorous</option>
+                <option value="Shakespearean" {% if style == 'Shakespearean' %}selected{% endif %}>Shakespearean</option>
+            </select>
+            <button type="submit">📜 Generate Commit Message</button>
+        </div>
+    </form>
+    {% if result %}
+    <div class="result-box">
+        <h3>Generated Commit Message:</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

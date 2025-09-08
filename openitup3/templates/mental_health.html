@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1>❤️ Coder's Companion</h1>
+        <p>Feeling overwhelmed? Share what's on your mind. (Your data is not saved)</p>
+        <form method="post">
+            <textarea name="issue" rows="5" placeholder="e.g., 'I'm stuck on a bug and feeling major imposter syndrome.'">{{ request.form['issue'] }}</textarea>
+            <button type="submit">💬 Talk to Cody</button>
+        </form>
+        {% if result %}
+        <div class="result-box">
+            <h3>A note from Cody:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

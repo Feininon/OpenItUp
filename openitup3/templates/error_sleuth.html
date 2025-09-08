@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>🕵️ The Error Sleuth</h1>
+    <p>Confused by an error? Paste your stack trace or error message below for a full diagnosis.</p>
+    <form method="post">
+        <textarea name="error_message" rows="12" placeholder="e.g., TypeError: 'NoneType' object is not iterable">{{ error_message }}</textarea>
+        <button type="submit">🔍 Investigate Error</button>
+    </form>
+    {% if result %}
+    <div class="result-box">
+        <h3>Sleuth's Report:</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

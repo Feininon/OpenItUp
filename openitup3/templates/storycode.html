@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1>📜 StoryCode</h1>
+        <p>Paste your Python code below to transform it into a short story.</p>
+        <form method="post">
+            <textarea name="code" rows="10" placeholder="def hello_world():&#10;    print('Hello, brave new world!')">{{ request.form['code'] }}</textarea>
+            <button type="submit">✨ Generate Story</button>
+        </form>
+        {% if result %}
+        <div class="result-box">
+            <h3>Your Story:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
