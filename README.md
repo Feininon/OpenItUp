@@ -164,11 +164,10 @@ Clear breakdown of what each endpoint in your `app.py` file does.
 ## TEAM
 
 Gokulramanan V, 
-GitHub: [ @Feininon](https://github.com/Feininon)
+ GitHub: [ @Feininon](https://github.com/Feininon)
 
 Sai Vignesh Raj M, 
-
-GitHub: [ @SaiVignesh45](https://github.com/SaiVignesh45)
+ GitHub: [ @SaiVignesh45](https://github.com/SaiVignesh45)
 
 Waatson J, 
-GitHub: [ @WAATS0N](https://github.com/WAATS0N)
+ GitHub: [ @WAATS0N](https://github.com/WAATS0N)
