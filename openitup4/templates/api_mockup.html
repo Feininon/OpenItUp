@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>🎭 The API Mockup Generator</h1>
+    <p>Describe your data model and get a sample JSON response for your API.</p>
+    <form method="post">
+        <textarea name="description" rows="5" placeholder="e.g., A user with a numeric id, a username, an email, and a boolean flag 'isActive'.">{{ description }}</textarea>
+        <button type="submit">🎭 Generate Mockup</button>
+    </form>
+    {% if result %}
+    <div class="result-box">
+        <h3>Generated JSON Response:</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

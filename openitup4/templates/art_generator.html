@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1>🎨 Generative Art</h1>
+        <p>Enter a programming concept to inspire some abstract art.</p>
+        <form method="post">
+            <input type="text" name="challenge" placeholder="e.g., 'Recursive Algorithms', 'Blockchain', 'Garbage Collection'">
+            <button type="submit">🖼️ Generate Art</button>
+        </form>
+        {% if art_svg %}
+        <div class="result-box art-box">
+            <h3>Generated SVG Art:</h3>
+            {{ art_svg|safe }}
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

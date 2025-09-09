@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>📊 The Code Visualizer</h1>
+    <p>Paste a Python function below to generate a flowchart of its logic.</p>
+    <form method="post">
+        <textarea name="code_to_visualize" rows="12" placeholder="def check_number(n):&#10;    if n > 0:&#10;        return 'Positive'&#10;    else:&#10;        return 'Not Positive'">{{ code_to_visualize }}</textarea>
+        <button type="submit">🎨 Generate Diagram</button>
+    </form>
+    {% if result %}
+    <div class="result-box">
+        <h3>Generated Flowchart:</h3>
+        <pre class="mermaid">
+            {{ result }}
+        </pre>
+    </div>
+    {% endif %}
+</div>
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
+{% endblock %}

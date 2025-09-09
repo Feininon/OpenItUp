@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>📜 The DocString Writer</h1>
+    <p>Paste a Python function below to automatically generate its documentation.</p>
+    <form method="post">
+        <textarea name="function_code" rows="12" placeholder="def calculate_sum(a, b):&#10;    return a + b">{{ function_code }}</textarea>
+        <div class="options">
+            <label for="style">DocString Style:</label>
+            <select name="style" id="style">
+                <option value="Google" {% if style == 'Google' %}selected{% endif %}>Google</option>
+                <option value="reStructuredText" {% if style == 'reStructuredText' %}selected{% endif %}>reStructuredText (Sphinx)</option>
+                <option value="NumPy" {% if style == 'NumPy' %}selected{% endif %}>NumPy</option>
+            </select>
+            <button type="submit">📜 Write Docs</button>
+        </div>
+    </form>
+    {% if result %}
+    <div class="result-box">
+        <h3>Documented Function:</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

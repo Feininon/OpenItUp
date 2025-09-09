@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1>😂 Bug Joke Generator</h1>
+        <p>Describe a code bug or frustrating concept, and get a joke about it.</p>
+        <form method="post">
+            <input type="text" name="bug" placeholder="e.g., 'Off-by-one error', 'CSS centering', 'Regex'">
+            <button type="submit">Tell Me a Joke</button>
+        </form>
+        {% if result %}
+        <div class="result-box">
+            <h3>Joke Time!</h3>
+            <p class="joke">{{ result.joke }}</p>
+            <h4>Explanation:</h4>
+            <p>{{ result.explanation }}</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
