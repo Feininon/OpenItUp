@@ -167,7 +167,7 @@ Gokulramanan V
 GitHub: [ @Feininon](https://github.com/Feininon)
 
 Sai Vignesh Raj M
-GitHub: https://github.com/SaiVignesh45
+GitHub: [ @SaiVignesh45](https://github.com/SaiVignesh45)
 
 Waatson J
-GitHub: https://github.com/WAATS0N 
+GitHub: [ @WAATS0N](https://github.com/WAATS0N)
